@@ -7,16 +7,20 @@ int main()
     // Floating point variables type: float, double
     // I want to make a float type variable for weight, height and bmi.
     // making the variable equal to 0 lets you initialize the starting value to zero.
-    float weight = 0, height = 0, bmi= 0;
+    float weightmetric = 0, heightmetric = 0, bmimetric= 0;
+    float weightimperial = 0, heightimperial = 0, bmiimperial= 0;
     cout << "Welcome to the BMI Program" << endl;
     cout << "What is your weight (kg)?" << endl;
-    cin >> weight;
+    cin >> weightmetric;
     cout << "What is your height (m)?" << endl;
-    cin >> height;
+    cin >> heightmetric;
     
     // calculate bmi
-    bmi = weight/(height * height);
-    cout << "Your BMI is " << bmi << endl;
-
+    bmimetric = weightmetric/(heightmetric * heightmetric);
+    weightimperial = weightmetric*2.2;
+    heightimperial = heightmetric*0.0254;
+    bmiimperial = weightimperial/(heightimperial*heightimperial);
+    cout << "Your BMI (metric) is " << bmimetric << endl;
+    cout << "Your BMI (Imperial) is " << bmiimperial << endl;
     return 0;
 }
