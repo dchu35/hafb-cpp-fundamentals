@@ -8,9 +8,15 @@ int main()
     std::cout << "Now inside VSCode and github" << std::endl;
     cout << "Another line under namespace std" << std::endl;
     cout << "Wildcats"<<" "<<"WSU "<<"Ogden " << std::endl;
-    // cin: for system/user input
+    // cin: for system/user input command
+    // cout: command output to user
     cout << "How old are you?" << endl;
     cin >> age; 
     cout << "I see you are: " << age << endl;
+    // sizeof(): get the size of the variable
+    cout << "Integers are: " << sizeof(int) << " bytes." << endl;
+    cout << "Min Integer value: " << INT32_MIN << 
+        "Max Integers value: " << INT32_MAX << " bytes." <<endl;
+    
     return 0;
 }
