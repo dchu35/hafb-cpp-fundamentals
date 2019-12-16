@@ -1,5 +1,13 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
+
+// Constants
+const float kInchesToMeter = 0.0254;
+const float kKilotoPound = 2.2074; 
+const float kBMIImperial = 703;
+const float kLowBMILimit = 18.5;
+const float kHighBMILimit = 24.9;
 
 int main()
 {
@@ -17,10 +25,24 @@ int main()
     
     // calculate bmi
     bmimetric = weightmetric/(heightmetric * heightmetric);
-    weightimperial = weightmetric*2.2;
-    heightimperial = heightmetric*0.0254;
-    bmiimperial = weightimperial/(heightimperial*heightimperial);
-    cout << "Your BMI (metric) is " << bmimetric << endl;
-    cout << "Your BMI (Imperial) is " << bmiimperial << endl;
+    // 1 in = 0.0254 m, 1 kg = 2.204 lbs
+    weightimperial = weightmetric*kKilotoPound;
+    heightimperial = heightmetric/kInchesToMeter;
+    bmiimperial = (weightimperial*kBMIImperial)/(heightimperial*heightimperial);
+    cout << "Your BMI (metric) is " << bmimetric << "." << endl;
+    cout << "Your BMI (Imperial) is " << bmiimperial << "." << endl;
+    
+    // Print if they are in the "good" range: BMI is in the 18.5 to 24.9
+    if(bmimetric > kLowBMILimit && bmimetric < kHighBMILimit)
+    {
+        cout << "Your BMI " << bmimetric << " is good." << endl;
+
+    }
+    else
+    {
+      cout << "Your BMI " << bmimetric << " is bad." << endl;  
+    }
+    cout << "Thanks for using the BMI Program." << endl;
     return 0;
 }
+
