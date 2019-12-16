@@ -27,7 +27,7 @@ int main()
         
         for(int num2 = 1; num2 <= kmax; ++num2)  // columns
         {
-            cout << setw(3) << num1*num2 << " ";
+            cout << setw(3) << num1*num2 << " "; // setw(x) = set width between characters
         }
         cout << endl; // ends the multiplication line and starts a new one.
 
