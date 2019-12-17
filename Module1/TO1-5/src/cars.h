@@ -1,7 +1,7 @@
 #ifndef CARS_H_
 #define CARS_H_
 
-int HorsePower();      // "standard" namespace
+int HorsePower ();      // "standard" namespace
 
 namespace lamborghini  // inside lamborghini namespace
 {
