@@ -49,7 +49,7 @@ we can increment the counter.
 
 6. Next, we can print using `cout` the variable `count`:
 ```c++
-cout << "Result is: " << result << endl;
+cout << "Result is: " << count << endl;
 ```
 
 7. Finally, create a function `void FactorMod3()` and move the code from steps 1-5 to it. Your function should print an `integer` with the count of

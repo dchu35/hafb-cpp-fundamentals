@@ -1,5 +1,5 @@
 #include <iostream>
-#include "factor.h"
+#include "magicfactor.h"
 using namespace std;
 
 // Function Prototype
@@ -7,5 +7,6 @@ using namespace std;
 // Main Function
 int main()
 {
+  FactorMod3();
   return 0;
 }
