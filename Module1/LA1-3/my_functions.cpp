@@ -26,7 +26,7 @@ void UpdateStep(int& step) // take the address of the parameter
     cout << "New step: " << step << endl;
 
 }
-int Max10(std::array <int, 10> nums)
+int Max10(const std::array <int, 10> nums)
 {
   int max = 0;
   for(auto num : nums)
@@ -36,4 +36,9 @@ int Max10(std::array <int, 10> nums)
       max = num;
     }
   }
+}
+void ClearElements(std::array<int, 10> &nums)
+{
+  for(int index = 0; index<nums.size(); ++index)
+  nums[index] = -99; // set value to -99
 }
