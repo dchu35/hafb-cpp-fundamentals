@@ -7,4 +7,6 @@
 
 #pragma once
 
-int Sum(int num1, int num2);
+int Sum(int num1, int num2); 
+
+void UpdateStep(int& step); // int& means the address of where step is.
