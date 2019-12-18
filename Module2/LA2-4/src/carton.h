@@ -12,7 +12,10 @@ class Carton // Convention states that classes created start with uppercase.
     public:   // how public sees our class.
         // Constructor: builds/creates your object, same name as class.
         Carton();
+        Carton(double length, double width, double height); 
         
+
+
         // Getters
         double length();  // should return a length value.
         double width();   // should return a width value.

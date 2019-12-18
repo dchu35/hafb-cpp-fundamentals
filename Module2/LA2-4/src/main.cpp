@@ -10,7 +10,7 @@ int main()
   // std::cout << "Box length: " << box.length() << std::endl; // we can now suppress this information and carton.cpp will take care of handling this.
   // std::cout << "Box width: " << box.width() << std::endl;
   // std::cout << "Box height: " << box.height() << std::endl;
-  // create a Carton object using the other constructor
+
   box.ShowInfo();   // display object information
   box.set_length(10.9);
   box.set_width(23.0);
@@ -19,6 +19,10 @@ int main()
   // std::cout << "Box width: " << box.width() << std::endl;
   // std::cout << "Box height: " << box.height() << std::endl;
   box.ShowInfo();
+
+  // create a Carton object using the other constructor
+  Carton box2(34, 89, 11);
+  box2.ShowInfo();
   // create an array of Cartons
 
   // add some valid elements to the array
