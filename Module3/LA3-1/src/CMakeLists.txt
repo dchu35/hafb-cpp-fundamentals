@@ -15,8 +15,9 @@ add_library(${LIB_NAME}
   SHARED
 
     height.h
-
     height.cpp
+    counter.h
+    counter.cpp
 
   )
 

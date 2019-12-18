@@ -63,7 +63,7 @@ class Carton // Convention states that classes created start with uppercase.
         // Constructor: builds/creates your object, same name as class.
         Carton();
         Carton(double length, double width, double height); 
-        ~Carton(); // Deconstructs classes when no longer in scope (no longer needed)
+        ~Carton(); // Deconstructs carton when no longer in scope (no longer needed)
         
 
 
