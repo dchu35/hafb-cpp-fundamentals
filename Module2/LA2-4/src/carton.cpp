@@ -11,9 +11,9 @@ const double Carton::kMinHeight = 0.25;
 // Constructors have access to private data members
 Carton::Carton()
 {
-    height_=0; // initializes the variables located in carton.
-    width_=0;
-    length_=0;
+    height_= 0; // initializes the variables located in carton.
+    width_= 0;
+    length_= 0;
 }
 
 // Second Constructor
@@ -111,4 +111,10 @@ void Carton::ShowInfo()
 double Carton::Volume() const
 {
     return length_ * width_ * height_;
+}
+
+// Capture otuput in an outStream
+void Carton::WriteData(std::ostream &out) const
+{
+    out << length_ << "," << width_ << "," << height_ << "," << Volume() << std::endl;
 }

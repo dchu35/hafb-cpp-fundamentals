@@ -1,6 +1,7 @@
 #include <iostream>
 #include "carton.h"
 #include <array>
+#include "carton_fileio.h"
 
 using namespace std;
 const int kMaxSize = 10;
@@ -26,19 +27,31 @@ int main()
   Carton box2(34, 89, 11);
   box2.ShowInfo();
 
-  Carton box3(1, 2, -3);
+  Carton box3(2, 4, 8);
   box3.ShowInfo();
   // create an array of Cartons 
-  std::array<Carton, kMaxSize> boxes;
+  std::array<Carton, kMaxArraySize> boxes;
 
   // add some valid elements to the array
   boxes[0] = Carton(12, 41, 52);
+  // Read data from file
+  std::string message;
+  int record_size = 0;
+
+  message = ReadDataFormatFromFile("../carton_data.txt", boxes, record_size);
+  std::cout << message << std::endl;
 
   // loop through the array
   std::cout << "\nPrinting Array: " << std::endl;
-  for(auto box : boxes)
+  // for(auto box : boxes)
+  for(auto box = 0; box < record_size; ++box)
+  // for(auto box : boxes)
   {
-    box.ShowInfo();
+    boxes[box].ShowInfo();
+    // box.ShowInfo();
+
+    // Write data to file
+  
   }
 
   // print out the volume of packages
