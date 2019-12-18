@@ -12,10 +12,19 @@ class Carton // Convention states that classes created start with uppercase.
     public:   // how public sees our class.
         // Constructor: builds/creates your object, same name as class.
         Carton();
+        
         // Getters
         double length();  // should return a length value.
         double width();   // should return a width value.
         double height();  // should return a height value.
+
+        // Setters
+        void set_length(double length);
+        void set_width(double width);
+        void set_height(double height);
+
+        // Other methods
+        void ShowInfo();
 
 };          // classes must end with a semicolon.
 

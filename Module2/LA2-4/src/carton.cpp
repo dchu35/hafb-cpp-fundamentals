@@ -1,9 +1,10 @@
+#include <iostream>
 #include "carton.h"
 
 // Constructors have access to private data members
 Carton::Carton()
 {
-    height_=0; // initilizes the variables located in carton.
+    height_=0; // initializes the variables located in carton.
     width_=0;
     length_=0;
 }
@@ -23,3 +24,24 @@ double Carton::height()
     return height_;
 }
 
+void Carton::set_length(double length)
+{
+    length_ = length;
+}
+
+void Carton::set_width(double width)
+{
+    width_ = width;
+}
+
+void Carton::set_height(double height)
+{
+    height_ = height;
+}
+
+void Carton::ShowInfo()
+{
+    std::cout << "Box length: " << length() << std::endl;
+    std::cout << "Box width: " << width() << std::endl;
+    std::cout << "Box height: " << height() << std::endl;
+}
