@@ -1,5 +1,12 @@
 #include <iostream>
 #include "carton.h"
+#include <string>
+
+// Static constants : Don't use the static keyword in non-header (.h) files.
+const double Carton::kMaxSize = 100;
+const double Carton::kMinLength = 6;
+const double Carton::kMinWidth = 3;
+const double Carton::kMinHeight = 0.25;
 
 // Constructors have access to private data members
 Carton::Carton()
@@ -12,10 +19,49 @@ Carton::Carton()
 // Second Constructor
 Carton::Carton(double length, double width, double height)
 {
+    try
+    {
+        SetMeasurements(length, width, height);
+    }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    
+    // height_ = height;
+    // width_ = width;
+    // length_ = length;
+    
+
+    catch(std::out_of_range e)
+    {
+        std::cerr << e.what() << '\n';
+        throw;
+    }
+}
+
+
+
+// Deconstructor
+Carton::~Carton()
+{
+
+}
+
+void Carton::SetMeasurements(double length, double width, double height)
+{
+    if(length <=0 || height <=0 || width <= 0)
+    {
+        throw std::out_of_range("All measurements must be greater than zero!");
+        // creates a bad scenario condition and gives a message to the user. 
+        // GET THIS SHIT OUTTA HERE! 
+
+    }
     height_ = height;
     width_ = width;
     length_ = length;
 }
+
 
 double Carton::length()
 {
@@ -32,8 +78,15 @@ double Carton::height()
     return height_;
 }
 
+// Getters
+
 void Carton::set_length(double length)
 {
+    if(length_ < kMinLength)
+    {
+        std::string error_msg = "LENGTH MUST BE GREATER THAN " + std::to_string(kMinLength) + "!";
+        throw std::out_of_range(error_msg); 
+    }
     length_ = length;
 }
 

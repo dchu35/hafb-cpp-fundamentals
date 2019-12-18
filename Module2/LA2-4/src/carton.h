@@ -10,9 +10,16 @@ class Carton // Convention states that classes created start with uppercase.
         double height_;
 
     public:   // how public sees our class.
+        // Static constants : creates it once and that's it...
+        static const double kMaxSize;
+        static const double kMinLength;
+        static const double kMinWidth;
+        static const double kMinHeight;
+
         // Constructor: builds/creates your object, same name as class.
         Carton();
         Carton(double length, double width, double height); 
+        ~Carton(); // Deconstructs classes when no longer in scope (no longer needed)
         
 
 
@@ -28,6 +35,7 @@ class Carton // Convention states that classes created start with uppercase.
 
         // Other methods
         void ShowInfo();
+        void SetMeasurements(double length, double width, double height);
 
 };          // classes must end with a semicolon.
 
