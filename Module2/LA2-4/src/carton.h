@@ -36,6 +36,7 @@ class Carton // Convention states that classes created start with uppercase.
         // Other methods
         void ShowInfo();
         void SetMeasurements(double length, double width, double height);
+        double Volume() const;  // this gives read-only access.
 
 };          // classes must end with a semicolon.
 

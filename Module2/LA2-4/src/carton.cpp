@@ -3,7 +3,7 @@
 #include <string>
 
 // Static constants : Don't use the static keyword in non-header (.h) files.
-const double Carton::kMaxSize = 100;
+// const double Carton::kMaxSize = 100;
 const double Carton::kMinLength = 6;
 const double Carton::kMinWidth = 3;
 const double Carton::kMinHeight = 0.25;
@@ -50,13 +50,13 @@ Carton::~Carton()
 
 void Carton::SetMeasurements(double length, double width, double height)
 {
-    if(length <=0 || height <=0 || width <= 0)
-    {
-        throw std::out_of_range("All measurements must be greater than zero!");
-        // creates a bad scenario condition and gives a message to the user. 
-        // GET THIS SHIT OUTTA HERE! 
+    // if(length <=0 || height <=0 || width <= 0)
+    // {
+    //     throw std::out_of_range("All measurements must be greater than zero!");
+    //     // creates a bad scenario condition and gives a message to the user. 
+        
 
-    }
+    // }
     height_ = height;
     width_ = width;
     length_ = length;
@@ -82,11 +82,11 @@ double Carton::height()
 
 void Carton::set_length(double length)
 {
-    if(length_ < kMinLength)
-    {
-        std::string error_msg = "LENGTH MUST BE GREATER THAN " + std::to_string(kMinLength) + "!";
-        throw std::out_of_range(error_msg); 
-    }
+    // if(length_ < kMinLength)
+    // {
+    //     std::string error_msg = "LENGTH MUST BE GREATER THAN " + std::to_string(kMinLength) + "!";
+    //     throw std::out_of_range(error_msg); 
+    // }
     length_ = length;
 }
 
@@ -105,4 +105,10 @@ void Carton::ShowInfo()
     std::cout << "Box length: " << length() << std::endl;
     std::cout << "Box width: " << width() << std::endl;
     std::cout << "Box height: " << height() << std::endl;
+    std::cout << "Box volume: " << Volume() << std::endl;
+}
+
+double Carton::Volume() const
+{
+    return length_ * width_ * height_;
 }
