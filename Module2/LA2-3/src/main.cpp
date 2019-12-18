@@ -1,6 +1,7 @@
 #include <array>
 #include <iostream>
 #include <string>
+#include <fstream>  // for I/O files (ifstream & ofstream commands) (input/output file stream)
 
 using namespace std;
 
@@ -35,24 +36,70 @@ int main() {
       "Susan",  "Hal",   "Olivia", "Polly", "Roy",    "Scott"};
 
   // create a variable of type ofstream
+  std::ofstream commute_file; // this establishes that an output stream is to be made 
 
   // open the file commute.txt
+  commute_file.open("../commute.csv"); // this says that the output stream 
+  // commute_file is to be connected to commute.csv and where the info is to be stored.
+  if(commute_file.fail())
+  {
+    std::cout << "Unable to open file commute.csv to write.\nShuttingdown.\n";
+    return 1;
+  }
 
   // write commute_minutes and commute_miles to the file commute.txt
+  for(int index = 0; index < kMaxSize; ++index) // it is more efficient to define the 
+  // variables when the loops or scopes are created 
+  // as opposed to traditionally stating them above everything.
+  {
+    std::cout << commute_minutes[index] << "," << commute_miles[index] << std::endl;
+    commute_file << commute_minutes[index] << "," << commute_miles[index] << std::endl;
+  }
 
   // create a variable of type ofstream and open the file town.txt
-
+  std::ofstream town_file;
   // write the towns to the file town.txt
-
+  town_file.open("../town.csv");
+  if(town_file.fail())
+  {
+    std::cout << "Unable to open file town.csv to write.\nShutting down.\n";
+    return 1;
+  }
+  for(int index = 0; index < kMaxSize; ++index)
+  {
+    std::cout << towns[index] << std::endl;
+    town_file << towns[index] << std::endl;
+  }
+  
   // create a variable of type ofstream and open the file commute_data.txt
-
+  std::ofstream utah_file;
   // write commute_minutes, commute_miles, and towns to the file commute.txt
+  utah_file.open("../utah.csv");
+  if(utah_file.fail())
+  {
+    std::cout << "Unable to open file utah.csv to write.\nShutting down.\n";
+    return 1;
+  }
 
+  std::string header = "minutes, miles, minutes/miles, name, town"; // label header
+  utah_file << header << std::endl;  // write header to utah_file
+  std::cout << header << std::endl;  // write header to utah_file
+
+  for(int index = 0; index < kMaxSize; ++index)
+  {
+    std::cout << commute_minutes[index] << ", " << commute_miles[index] << ", " << static_cast<float>(commute_minutes[index])/commute_miles[index] << ", " << towns[index] << std::endl;
+    utah_file << commute_minutes[index] << ", " << commute_miles[index] << ", " << static_cast<float>(commute_minutes[index])/commute_miles[index] << ", " << towns[index] << std::endl;
+  // static_cast<float>(...stuff...) lets us get decimal results as opposed to truncating to integer results.
+  }
   // do computations and add labeling to data before writing to file
 
   // write a report to the commute_report.txt file. Include name, town,
   // commute_minutes, commute_miles, and average minutes per mile to the file
   // commute.txt
+
+  commute_file.close();
+  town_file.close();
+  utah_file.close();
 
   return 0;
 }
