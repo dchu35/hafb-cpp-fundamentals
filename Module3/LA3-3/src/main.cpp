@@ -19,6 +19,9 @@ int main()
   d4 = d1 + d2 + d3;
   d4.ShowDist();
 
+  // display info with stdout
+  std::cout << d4 << std::endl;
+
   return 0;
 }
 

@@ -20,6 +20,8 @@ public:
     
     // Other Methods
     void ShowDist() const;
-    Distance operator + (Distance d1) const;
+    Distance operator + (Distance rhs) const;
+
+   friend std::ostream&operator << (std::ostream &os, Distance& distance);
 };
 
