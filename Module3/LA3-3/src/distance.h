@@ -15,10 +15,11 @@ public:
     int feet() const{return feet_;}
     int set_feet(int feet) {feet_= feet;}
 
-    int inches() const{return inches_;}
+    float inches() const{return inches_;}
     int set_inches(float inches) {inches_= inches;}
     
     // Other Methods
     void ShowDist() const;
+    Distance operator + (Distance d1) const;
 };
 
