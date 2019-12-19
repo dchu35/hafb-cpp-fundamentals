@@ -60,11 +60,12 @@ int main()
 ## Plugins and Doxygen documentation
 
 - C/C++ Intellisense
-- Code Spell Extension 
+- Code Spell Checker 
 - Doxygen Documentation Generator
 - Markdown All in One
-- CMake
+- CMake 
 - CMake Tools
+- EPITECH C/C++ Headers
 
 ```cpp
 To generate Doxygen documentation: 
