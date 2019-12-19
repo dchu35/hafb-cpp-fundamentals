@@ -36,3 +36,14 @@ build/*
 *.exe
 *.out
 *.app
+*.log
+*.check_cache
+*.marks
+*.cmake
+*.bin
+*.make
+*.internal
+*.rsp
+*.txt
+*.includecache
+
