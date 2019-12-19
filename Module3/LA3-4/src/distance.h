@@ -10,6 +10,7 @@ private:
 public:
     Distance() : feet_(0), inches_(0) {}
     Distance(int feet, float inches) : feet_(feet), inches_(inches) {}
+    Distance(Distance& dist); // Copy Constructor
     ~Distance(){};
 
     // Getter & Setter
@@ -26,10 +27,12 @@ public:
     friend std::ostream &operator<<(std::ostream &os, Distance &distance);
 
     // Task 1: create the "-operator"
-    Distance operator-(Distance rhs) const;
+    friend Distance operator-(Distance lhs, Distance rhs); // Friend operator
     // Task 2: create an update_distance(feet, inches) function to update fields using setters
     void update_distance(int ft, float in);
 
     bool operator<(Distance rhs) const;  // compare objects
     bool operator==(Distance rhs) const; // compare objects
+
+    Distance operator =(Distance& rhs);
 };
